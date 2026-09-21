@@ -9,8 +9,7 @@ The project uses Python, FastAPI, Pydantic, SQLite, and pytest.
 ## Features
 
 * Save a new experiment
-* Retrieve all experiments
-* Retrieve an experiment by ID
+* Retrieve all experiments, or retrieve experiment bz ID
 * Find the best experiment by accuracy or F1 score
 * Delete an experiment
 * Validate input data
@@ -82,3 +81,12 @@ Run the tests with:
 ```
 
 While building this project, I practiced working with REST APIs, JSON data, input validation, SQL queries, HTTP status codes, SQLite databases, and automated API testing.
+
+## Inspiration
+
+A short introduction to the framework used in this project:
+
+[FastAPI in 15 Minutes - Crash Course for Beginners](https://www.youtube.com/watch?v=BPRKBQwEHe0)
+
+
+
