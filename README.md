@@ -81,3 +81,9 @@ Run the tests with:
 ```
 
 While building this project, I practiced working with REST APIs, JSON data, input validation, SQL queries, HTTP status codes, SQLite databases, and automated API testing.
+
+## Inspiration and further learning
+
+[Python API Development - Comprehensive Course for Beginners](https://www.youtube.com/watch?v=0sOvCWFmrtA) by freeCodeCamp.org
+
+
