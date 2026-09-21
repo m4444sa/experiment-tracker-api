@@ -82,8 +82,11 @@ Run the tests with:
 
 While building this project, I practiced working with REST APIs, JSON data, input validation, SQL queries, HTTP status codes, SQLite databases, and automated API testing.
 
-## Inspiration and further learning
+## Inspiration
 
-[Python API Development - Comprehensive Course for Beginners](https://www.youtube.com/watch?v=0sOvCWFmrtA) by freeCodeCamp.org
+A short introduction to the framework used in this project:
+
+[FastAPI in 15 Minutes - Crash Course for Beginners](https://www.youtube.com/watch?v=BPRKBQwEHe0)
+
 
 
