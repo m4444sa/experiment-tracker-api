@@ -9,8 +9,7 @@ The project uses Python, FastAPI, Pydantic, SQLite, and pytest.
 ## Features
 
 * Save a new experiment
-* Retrieve all experiments
-* Retrieve an experiment by ID
+* Retrieve all experiments, or retrieve experiment bz ID
 * Find the best experiment by accuracy or F1 score
 * Delete an experiment
 * Validate input data
