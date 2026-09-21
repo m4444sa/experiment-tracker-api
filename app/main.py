@@ -22,7 +22,7 @@ app = FastAPI(
     ),
     version="1.0.0",
     lifespan=lifespan,
-)
+) # creating the api application
 
 
 def row_to_experiment(row: sqlite3.Row) -> dict:
@@ -34,7 +34,7 @@ def row_to_experiment(row: sqlite3.Row) -> dict:
         "accuracy": row["accuracy"],
         "f1_score": row["f1_score"],
         "created_at": row["created_at"],
-    }
+    } #converting row object into a dict, fastapi does serialization into JSON 
 
 
 @app.get("/")
@@ -44,7 +44,7 @@ def home():
         "documentation": "/docs",
     }
 
-
+#decorator to connect urls to functions
 @app.post(
     "/experiments",
     response_model=ExperimentResponse,
@@ -54,6 +54,7 @@ def create_experiment(experiment: ExperimentCreate):
     connection = get_connection()
 
     cursor = connection.execute(
+        # ? are placeholders, protecting against sql injection
         """
         INSERT INTO experiments (
             model_name,
@@ -74,7 +75,7 @@ def create_experiment(experiment: ExperimentCreate):
     )
 
     connection.commit()
-
+    #selecting one row
     row = connection.execute(
         "SELECT * FROM experiments WHERE id = ?",
         (cursor.lastrowid,),
@@ -92,8 +93,9 @@ def create_experiment(experiment: ExperimentCreate):
 def get_experiments():
     connection = get_connection()
 
+    #selecting all rows
     rows = connection.execute(
-        "SELECT * FROM experiments ORDER BY id DESC"
+        "SELECT * FROM experiments ORDER BY id DESC" #sorting desc so recent experiments come first
     ).fetchall()
 
     connection.close()
@@ -101,7 +103,7 @@ def get_experiments():
     return [row_to_experiment(row) for row in rows]
 
 
-# This route must appear before /experiments/{experiment_id}.
+# this route must appear before /experiments/{experiment_id}.
 @app.get(
     "/experiments/best",
     response_model=ExperimentResponse,
